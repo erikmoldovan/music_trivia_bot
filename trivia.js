@@ -14,7 +14,7 @@ function triviaCtrl($scope, $http){
 
 		$http.get(url, {params: params})
 			.success(function(data, status, headers, config){
-				parseResults(data);
+				parseAlbums(data);
 			}).error(function(data, status, headers, config){
 				console.log(status + ': ERROR');
 			});
@@ -27,11 +27,11 @@ function triviaCtrl($scope, $http){
 
 	// Abstracted album parsing
 	parseAlbums = function(data){
-		console.log(data.result);
+		albums = data.result[0]['/music/artist/album'];
 	};
 
 	// Abstracted song selection logic
 	parseSongs = function(data){
-
+		
 	};
 }
