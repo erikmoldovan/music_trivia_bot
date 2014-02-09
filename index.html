@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+		<script src="trivia.js"></script>
+	</head>
+	<body>
+		<form ng-submit="submitArtist()" ng-controller="triviaCtrl">
+			<span>Enter the name of a music artist:</span>
+			<input type="text" ng-model="artistName">
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
