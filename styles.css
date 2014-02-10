@@ -1,5 +1,16 @@
 body {
 	text-align: center;
+	margin: 20%;
+}
+
+ul {
+	padding-top: 24px;
+	list-style-type: none;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-start: 0;
 }
 
 li {
@@ -22,4 +33,29 @@ li {
 
 div.questions li {
 	cursor: pointer;
+}
+
+#question_form {
+	padding-bottom: 12px;
+}
+
+input {
+	text-align: center;
+}
+
+#question_form input,
+#question_form div {
+	display: block;
+	margin: 0 auto 8px;
+}
+
+#question_box {
+	padding: 12px;
+	border: 1px solid grey;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+.notification {
+	display: none;
 }

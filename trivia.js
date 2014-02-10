@@ -3,34 +3,42 @@ function triviaCtrl($scope, $http){
 	// VARIABLE DECLARATION
 
 	var url = "https://www.googleapis.com/freebase/v1/mqlread";
+	var $notification = $('.notification');
 
 	$scope.songs = [];
 	$scope.answer = {};
 
 	// SCOPE METHODS
 
+	// Handles form submission and processing
 	$scope.submitArtist = function(){
 		// Reset songs model
 		$scope.songs = [];
 		$scope.answer = {};
 
-		buildArtistQuery($scope.artistName);
+		if(!$scope.artistName){
+			$notification.text('Please enter a valid music artist name')
+				.addClass('red')
+				.fadeIn("fast");
+		}else{
+			$notification.fadeOut("fast");
 
-		$('.questions').fadeIn();
+			buildArtistQuery($scope.artistName);
+			$('.questions').fadeIn();
+		}
 	};
 
-	$scope.checkAnswer = function(){
-		var $notification = $('.notification');
-
+	// Handles answer check
+	$scope.checkAnswer = function(e){
 		if(this.song.album_name == $scope.answer.album_name){
 			$notification.text('Correct!')
 				.addClass('green');
 		}else{
-			$notification.text('Wrong answer. It was ' + $scope.answer.track)
+			$notification.text('Wrong answer. It was \"' + $scope.answer.track + '\"')
 				.addClass('red');
 		}
 
-		$notification.fadeIn();
+		$notification.slideDown();
 	}
 
 	// HELPER FUNCTIONS

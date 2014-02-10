@@ -8,14 +8,14 @@
 	</head>
 	<body>
 		<div ng-controller="triviaCtrl">
-			<form ng-submit="submitArtist()">
-				<div>Enter the name of a music artist:</div>
+			<form ng-submit="submitArtist()" id="question_form">
+				<div id="entry">Enter the name of a music artist:</div>
 				<input type="text" ng-model="artistName">
 				<input type="submit" value="Submit">
 			</form>
+			<div class="notification"></div>
 			<div class="questions">
-				<div>Which song appeared on the album {{answer.album_name}} by {{artistName}}?</div>
-				<div class="notification"></div>
+				<div id="question_box">Which song appeared on the album {{answer.album_name}} by {{artistName}}?</div>
 				<ul>
 					<li ng-repeat="song in songs" ng-click="checkAnswer()">{{song.track}}</li>
 				</ul>
