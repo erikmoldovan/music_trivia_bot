@@ -2,13 +2,24 @@
 <html ng-app>
 	<head>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="trivia.js"></script>
+		<link rel="stylesheet" href="styles.css"/>
 	</head>
 	<body>
-		<form ng-submit="submitArtist()" ng-controller="triviaCtrl">
-			<span>Enter the name of a music artist:</span>
-			<input type="text" ng-model="artistName">
-			<input type="submit" value="Submit">
-		</form>
+		<div ng-controller="triviaCtrl">
+			<form ng-submit="submitArtist()">
+				<div>Enter the name of a music artist:</div>
+				<input type="text" ng-model="artistName">
+				<input type="submit" value="Submit">
+			</form>
+			<div class="questions">
+				<div>Which song appeared on the album {{answer.album_name}} by {{artistName}}?</div>
+				<div class="notification"></div>
+				<ul>
+					<li ng-repeat="song in songs" ng-click="checkAnswer()">{{song.track}}</li>
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>

@@ -1,0 +1,25 @@
+body {
+	text-align: center;
+}
+
+li {
+	list-style: none;
+}
+
+.questions {
+	display: none;
+}
+
+.green {
+	background: green;
+	color: #ffffff;
+}
+
+.red {
+	background: red;
+	font-weight: bold;
+}
+
+div.questions li {
+	cursor: pointer;
+}
