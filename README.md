@@ -1,17 +1,17 @@
 trivia_bot
 ==========
 
-0.5h - Scoping & High level research
-0.5h - Scaffolding the project
-3.5h - Creating the app logic
-0.5h - Beautifying
-0.5h - QA
++ 0.5h - Scoping & High level research
++ 0.5h - Scaffolding the project
++ 3.5h - Creating the app logic
++ 0.5h - Beautifying
++ 0.5h - QA
 
 Total:
 
-4.5 hours necessary work
-5 hours with QA
-5.5 hours with 'user delight' additions
++ 4.5 hours necessary work
++ 5 hours with QA
++ 5.5 hours with 'user delight' additions
 
 
 Things I would improve:
