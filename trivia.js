@@ -26,7 +26,7 @@ function triviaCtrl($scope, $http){
 			$notification.text('Correct!')
 				.addClass('green');
 		}else{
-			$notification.text('Wrong answer. It was ' + $scope.answer.album_name)
+			$notification.text('Wrong answer. It was ' + $scope.answer.track)
 				.addClass('red');
 		}
 
@@ -83,7 +83,7 @@ function triviaCtrl($scope, $http){
 				// Makes sure that the edge case of an undefined track does not happen
 				// It happens more than you think...
 				if(track != undefined) canPass = true;
-			}while(!canPass)
+			}while(!canPass);
 
 			$scope.songs.push({
 				"album_name": album.name,
