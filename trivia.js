@@ -1,9 +1,9 @@
 function triviaCtrl($scope, $http){
 	var url = "https://www.googleapis.com/freebase/v1/mqlread";
 
-	$scope.submitArtist = function(){
-		// this.artist = $scope.artistName;
+	$scope.songs = [];
 
+	$scope.submitArtist = function(){
 		buildArtistQuery($scope.artistName);
 	};
 
@@ -11,22 +11,17 @@ function triviaCtrl($scope, $http){
 	buildArtistQuery = function(name){
 		var query = {
 			'name': name,
-			'id': null,
 			'type': '/music/artist',
-			'/music/artist/album': []
+			'/music/artist/album': [{
+				"name": null,
+				"id": null,
+				"releases": [{
+					"track": []
+				}]
+			}]
 		};
 
 		accessFreebase({query: JSON.stringify([query])}, parseAlbums);
-	};
-
-	buildAlbumQuery = function(name){
-		// var query = {
-		// 	'name': null,
-		// 	'type': '/music/album',
-		// 	'/music/artist': []
-		// };
-
-		// accessFreebase({query: JSON.stringify([query])}, parseSongs);
 	};
 
 	// Abstracted MQL query method; stub for refactoring
@@ -41,13 +36,13 @@ function triviaCtrl($scope, $http){
 
 	// Abstracted album parsing
 	parseAlbums = function(data){
-		console.log(data.result);
 		albums = data.result[0]['/music/artist/album'];
+		console.log(albums);
 		
-		for(i = 0; i < albums.length; i++){
-			console.log(albums[i]);
+		// for(i = 0; i < albums.length; i++){
+			// console.log(albums[i]);
 			// buildAlbumQuery(albums[i]);
-		}
+		// }
 	};
 
 	// Abstracted song selection logic
